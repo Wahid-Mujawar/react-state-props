@@ -1,7 +1,8 @@
 import React from 'react';
 
 const User = (props) => {
-    return (<div>User</div>)
+return (<div>
+    Name: qqqq{props.children} Age: {props.age}</div>)
 }
 
 export default User;
