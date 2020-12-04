@@ -2,16 +2,41 @@ import React, {Component} from 'react' ;
 import User from './User'
 
 class Users extends Component {
-render () {
-    return (<div> <h2> WEB DESIGN</h2>
-        <h2>Users</h2><h2/>
-        <User age="29" education="St Boscos">John</User>
-        <User age="32" education="Chicago University">Tom</User>
-        <User age="36" education="Education City">Jerry</User>
+    state = {
+        users: [
+            {name:"Henley", age:38},
+            {name:"Clinton", age:25},
+            {name:"Peter", age:45},
+        ],
 
-    </div>)
+        title:"Users List"
+    };
+
+    makeMeYounger = () => {
+
+        const newState = this.state.users.map((user) =>{
+            const tempUser = user;
+            tempUser.age -=10;
+            return tempUser;
+        });
+
+        this.setState({
+            newState
+         });
+    }   
     
+    render() {
+        return (<div>
+            <button onClick={this.makeMeYounger}>Make Us 10 Years Younger</button>
+            <h2>{this.state.title}</h2>
+            <h3>{this.state.header}</h3>
+            <User age={this.state.users[0].age}>{this.state.users[0].name}</User>
+            <User age={this.state.users[1].age}>{this.state.users[1].name}</User>
+            <User age={this.state.users[2].age}>{this.state.users[2].name}</User>
+            </div>)
+        
+    }
 }
-}
+
 
 export default Users;
