@@ -7,6 +7,11 @@ class Users extends Component {
             {name:"Henley", age:38},
             {name:"Clinton", age:25},
             {name:"Peter", age:45},
+            {name:"Tom", age:33},
+            {name:"Jerry", age:55},
+            {name:"Paul", age:42},
+            {name:"Xavier", age:40},
+
         ],
 
         title:"Users List"
@@ -29,10 +34,13 @@ class Users extends Component {
         return (<div>
             <button onClick={this.makeMeYounger}>Make Us 10 Years Younger</button>
             <h2>{this.state.title}</h2>
-            <h3>{this.state.header}</h3>
             <User age={this.state.users[0].age}>{this.state.users[0].name}</User>
             <User age={this.state.users[1].age}>{this.state.users[1].name}</User>
             <User age={this.state.users[2].age}>{this.state.users[2].name}</User>
+            <User age={this.state.users[3].age}>{this.state.users[3].name}</User>
+            <User age={this.state.users[4].age}>{this.state.users[4].name}</User>
+            <User age={this.state.users[5].age}>{this.state.users[5].name}</User>
+            <User age={this.state.users[6].age}>{this.state.users[6].name}</User>
             </div>)
         
     }
